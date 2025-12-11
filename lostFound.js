@@ -1,6 +1,7 @@
 function setup() {
     let c = createCanvas(400, 400);
     c.parent('sketch-container'); 
+ 
   }
   
   function draw() {
