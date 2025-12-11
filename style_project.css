@@ -1,0 +1,169 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  :root {
+    --bg-color: #f4f4f6;
+    --text-color: #111;
+    --border-color: #d0d2d6;
+    --card-bg: #ffffff;
+    --shadow: 0 8px 18px rgba(15, 23, 42, 0.06);
+    --radius: 18px;
+    --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+  
+
+  body {
+    background: var(--bg-color);
+    font-family: var(--font-main);
+    padding: 40px 24px 80px;
+    color: var(--text-color);
+  }
+  
+  header {
+    margin: 0 auto 40px;
+    max-width: 1200px;
+  }
+  
+  header h5 a {
+    text-decoration: none;
+    color: #9ca3af;
+    font-size: 0.75rem;
+    letter-spacing: 0.09em;
+  }
+  
+  header h1 {
+    margin-top: 6px;
+    font-size: 2.4rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+  }
+  
+ 
+  .layout {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+  }
+  
+  .project-list {
+    width: 260px;
+  }
+  
+  .project-list h2 {
+    font-size: 0.9rem;
+    letter-spacing: 0.12em;
+    margin-bottom: 10px;
+  }
+  
+  .project-list ul {
+    list-style: none;
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+  }
+  
+  .project-list li + li {
+    border-top: 1px solid rgba(220, 220, 220, 0.8);
+  }
+  
+  .project-list a {
+    display: block;
+    padding: 12px 18px;
+    font-size: 0.9rem;
+    color: #374151;
+    text-decoration: none;
+    transition: background 0.18s ease, padding-left 0.18s ease;
+  }
+  
+  .project-list a:hover {
+    background: #eef0f3;
+    padding-left: 24px;
+  }
+  
+  .project-list a.active {
+    background: #eef0f3;
+    font-weight: 600;
+  }
+  
+  .project-main {
+    flex: 1;
+  }
+  
+  .project-title {
+    font-size: 2rem;
+    letter-spacing: 0em;
+    margin-bottom: 14px;
+    margin-top: 20px;
+  }
+  
+  .sketch-wrapper {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+  }
+ 
+  #sketch-container {
+    width: 100%;
+    max-width: 900px;
+  }
+
+  #sketch-container canvas {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 14px;
+  }
+  
+
+  .description {
+    margin-top: 16px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #4b5563;
+  }
+ 
+  footer {
+    max-width: 1200px;
+    margin: 80px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+    text-align: right;
+  }
+  
+  footer p {
+    color: #9ca3af;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+  }
+
+  @media (max-width: 900px) {
+    body {
+      padding: 24px 16px 60px;
+    }
+  
+    header {
+      margin-bottom: 24px;
+    }
+  
+    .layout {
+      flex-direction: column;
+      gap: 24px;
+    }
+  
+    .project-list {
+      width: 100%;
+    }
+  }
+  

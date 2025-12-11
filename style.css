@@ -1,0 +1,224 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  :root {
+    --bg-color: #f4f4f6;
+    --bg-color-2: #e5e7eb;
+    --text-color: #111;
+    --border-color: #d0d2d6;
+    --card-bg: #ffffff;
+    --shadow: 0 12px 26px rgba(15, 23, 42, 0.10);
+    --shadow-soft: 0 8px 18px rgba(15, 23, 42, 0.06);
+    --radius: 18px;
+    --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --accent: #111827;
+  }
+  
+  body {
+    font-family: var(--font-main);
+    color: var(--text-color);
+    padding: 40px 24px 80px;
+    background: radial-gradient(circle at top left, #ffffff 0, var(--bg-color) 46%, var(--bg-color-2) 100%);
+    min-height: 100vh;
+    animation: fadeInPage 0.7s ease-out;
+  }
+  
+  
+  header {
+    margin: 0 auto 56px;
+    margin-top:100px;
+    max-width: 1100px;
+    position: relative;
+    animation: slideDown 0.6s ease-out;
+  }
+  
+  header h5 a {
+    text-decoration: none;
+    color: #9ca3af;
+    font-size: 0.75rem;
+    letter-spacing: 0.09em;
+  }
+  
+  header h5 {
+    animation: fadeInSoft 0.8s ease-out;
+  }
+  
+  header h1 {
+    margin-top: 6px;
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: 0.10em;
+    position: relative;
+    display: inline-block;
+  }
+  
+  header h1::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    height: 2px;
+    width: 0;
+    background: linear-gradient(90deg, #111827, #9ca3af);
+    border-radius: 999px;
+    animation: underlineGrow 0.8s ease-out 0.3s forwards;
+  }
+  
+  section {
+    max-width: 1100px;
+    margin: 40px auto 100px;
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+  }
+  
+  nav {
+    flex: 1;
+  }
+  
+  nav h1 {
+    font-size: 1rem;
+    letter-spacing: 0.12em;
+    margin-bottom: 12px;
+  }
+  
+  .card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+    border: 1px solid var(--border-color);
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  
+  nav .card {
+    padding: 12px 0;
+    animation: floatUp 0.7s ease-out 0.25s forwards;
+  }
+  
+  .about-card {
+    padding: 26px 30px;
+    animation: floatUp 0.7s ease-out 0.38s forwards;
+  }
+  
+  nav ul {
+    list-style: none;
+  }
+  
+  nav li {
+    border-top: 1px solid rgba(220,220,220,0.8);
+  }
+  
+  nav li:first-child {
+    border-top: none;
+  }
+  
+  nav a {
+    display: block;
+    padding: 12px 20px;
+    color: #374151;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition:
+      background 0.18s ease,
+      padding-left 0.18s ease,
+      box-shadow 0.18s ease,
+      transform 0.18s ease;
+  }
+  
+  nav a:hover {
+    background: #eef0f3;
+    padding-left: 26px;
+    box-shadow: 0 6px 14px rgba(148, 163, 184, 0.4);
+    transform: translateY(-1px);
+  }
+  
+  /* About Me 영역 */
+  article {
+    flex: 2;
+  }
+  
+  .about-title {
+    font-size: 1rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  
+  .about-card p {
+    color: #4b5563;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    max-width: 640px;
+  }
+  
+  footer {
+    max-width: 1100px;
+    margin: 80px auto 0;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+    text-align: right;
+  }
+  
+  footer p {
+    color: #9ca3af;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+  }
+  
+  @keyframes fadeInPage {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes fadeInSoft {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  
+  @keyframes floatUp {
+    0%   { opacity: 0; transform: translateY(18px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes underlineGrow {
+    from { width: 0; opacity: 0; }
+    to   { width: 120px; opacity: 1; }
+  }
+  
+  @media (max-width: 768px) {
+    body {
+      padding: 24px 16px 48px;
+    }
+  
+    header {
+      margin-bottom: 40px;
+    }
+  
+    header h1 {
+      font-size: 2.1rem;
+      letter-spacing: 0.08em;
+    }
+  
+    section {
+      margin: 16px auto 60px;
+      flex-direction: column;
+    }
+  
+    nav, article {
+      flex: none;
+    }
+  
+    .about-card {
+      padding: 20px 22px;
+    }
+  }
+  
